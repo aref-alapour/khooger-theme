@@ -1,0 +1,226 @@
+@import "./template/main";
+@import "./template/components/cart", "./template/components/accordion";
+.category-services-showcase {
+    @include flex(space-between, center, column);
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        padding: 40px 0;
+        gap: 50px;
+    }
+    gap: 30px;
+
+    & .detail {
+        padding: 0 40px;
+        text-align: center;
+        @media screen and (min-width: 1200px) {
+            width: 70%;
+            padding: unset;
+            text-align: unset;
+        }
+        & h1 {
+            margin-bottom: 20px;
+        }
+        & p {
+            font-size: small;
+        }
+        @media screen and (max-width: 992px) {
+            margin-top: 100px;
+        }
+    }
+
+    & .image {
+        width: 150px;
+        @media screen and (max-width: 992px) {
+            display: none;
+        }
+    }
+}
+.info-data-section-product {
+    width: 80%;
+    margin: 100px auto;
+    @include flex(center);
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+        width: 100%;
+        margin: 50px auto;
+    }
+    & .image-logo {
+        background-image: url("../../images/site-images/Image artboard 15 1.jpg");
+        max-width: 600px;
+        width: 50%;
+        margin-right: auto;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 20px;
+        @media screen and (max-width: 992px) {
+            order: -1;
+            width: 100%;
+            max-width: unset;
+            height: 350px;
+            border-radius: unset;
+        }
+        @include flex(center, center);
+        & img {
+            width: 50%;
+            @media screen and (max-width: 992px) {
+                width: 150px;
+            }
+        }
+    }
+    & .info-data {
+        @include flex(center, center, row, wrap);
+        gap: 30px;
+        padding: 30px 20px;
+        width: 100%;
+        @media screen and (max-width: 992px) {
+            gap: 10px;
+            padding: unset;
+            margin-top: 10px;
+        }
+        & .item {
+            width: 45%;
+            @media screen and (max-width: 992px) {
+                display: none;
+            }
+            color: $color-dark-100;
+            text-align: right;
+            padding: 20px;
+            & .image {
+                & img {
+                    border-radius: 20px;
+                }
+            }
+            & h3 {
+                font-size: small;
+                color: $color-dark-100;
+                margin: 10px 0;
+            }
+            & ul {
+                & li {
+                    & > a {
+                        font-size: small;
+                    }
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    & .slider {
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+    &.light {
+        & .image-logo {
+            background-image: url("../../images/site-images/Group 236.jpg");
+        }
+    }
+    &.bed {
+        & .image-logo {
+            background-image: url("../../images/site-images/Group 238.jpg");
+        }
+    }
+}
+.info-data-section {
+    width: 80%;
+    height: 450px;
+    @media screen and (max-width: 768px) {
+        height: max-content;
+    }
+    margin: 50px auto;
+    @include flex(center, center);
+    @extend %box-shadow-e3;
+    border-radius: 20px;
+    overflow: hidden;
+    & .image-logo {
+        background-image: url("../../images/site-images/unsplash_85pCvDWDMmI-info.jpg");
+        max-width: 500px;
+        width: 30%;
+        height: 100%;
+        margin-right: auto;
+        background-position: center center;
+        background-size: cover;
+        @media screen and (max-width: 992px) {
+            display: none;
+        }
+        @include flex(center, center);
+
+        & img {
+            width: 50%;
+        }
+    }
+    & .info-data {
+        @include flex(center, center, row, wrap);
+        gap: 30px;
+        padding: 30px 20px;
+        width: 70%;
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            gap: 10px;
+        }
+        background-color: $color-grey-40;
+        & .item {
+            width: 45%;
+            color: $color-primary-100;
+            text-align: center;
+            padding: 20px;
+            & h3 {
+                font-size: small;
+                color: $color-primary-100;
+            }
+            & p {
+                color: $color-primary-100;
+                font-weight: 300;
+                font-size: small;
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.plan-section {
+    padding: 50px 20px;
+    @include bg-gradient(45deg, #6f46d3, #5319a5);
+    position: relative;
+    @include flex(center, center);
+    & > img {
+        position: absolute;
+        width: 150px;
+        left: 20px;
+        top: -80px;
+        @media screen and(max-width: 1200px) {
+            width: 100px;
+            left: 0px;
+            top: -50px;
+        }
+    }
+    & .content {
+        @include flex(center, center, column);
+        gap: 30px;
+        & .logo {
+            width: 300px;
+            margin: 0 auto;
+        }
+        & p {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 700px;
+            color: $color-white;
+            font-size: 16px;
+            & span.plan {
+                color: $color-fourthly-100;
+            }
+        }
+        & .plan-button {
+            text-align: center;
+            & a {
+                background-color: $color-grey-60;
+                padding: 10px 20px;
+                border-radius: 15px;
+            }
+        }
+    }
+}

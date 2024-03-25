@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins", "abstracts/placeholders";
+@import "base/base", "base/fonts", "base/helpers", "base/typography", "base/animation";
+header {
+    background-color: #fafafa;
+    @extend %box-shadow-e2;
+}
+footer {
+    @extend %box-shadow-e4;
+    padding: 10px 0;
+    & .sub-footer {
+        @include flex(space-between, center);
+        @media screen and (max-width: 992px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+        padding: 10px;
+        & .title {
+            & p {
+                font-size: 13px;
+            }
+        }
+        & .socials {
+            @include flex(center, center);
+            gap: 15px;
+            & svg {
+                color: $color-dark-70;
+            }
+        }
+    }
+}

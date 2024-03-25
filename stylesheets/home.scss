@@ -1,0 +1,410 @@
+@import "./template/main";
+@import "./template/components/cart", "./template/components/accordion";
+.showcase {
+    background-image: url("../../images/site-images/unsplash_85pCvDWDMmI.jpg");
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 70px);
+    @include flex(center, center, column);
+    gap: 10px;
+    padding: 0 20px;
+    & svg {
+        max-width: 500px;
+        @media screen and (max-width: 600px) {
+            max-width: 90%;
+        }
+    }
+    & p {
+        color: $color-white;
+        font-size: 25px;
+        text-align: center;
+    }
+}
+.advance-search-box {
+    max-width: 1100px;
+    width: 90%;
+    height: 250px;
+    margin: -125px auto 30px;
+    @include flex(space-between, center);
+    background-color: $color-white;
+    border-radius: 20px;
+    overflow: hidden;
+    @extend %box-shadow-e2;
+    & .content {
+        width: 100%;
+        @media screen and (min-width: 1201px) {
+            width: 85%;
+        }
+        padding: 20px;
+        & .title {
+            text-align: center;
+            margin-bottom: 20px;
+            & p {
+                font-size: 18px;
+                font-weight: bold;
+                color: $color-primary-100;
+            }
+        }
+        & .form {
+            width: 90%;
+            margin: 0 auto;
+            & .content-form {
+                @include flex(space-between, center);
+                @media screen and (max-width: 1200px) {
+                    flex-direction: column;
+                    gap: 20px;
+                    border: unset;
+                }
+                & .input {
+                    border: 1px solid $color-grey-60;
+                    border-radius: 10px;
+                    @include flex(start, center);
+                    @media screen and (max-width: 1200px) {
+                        flex-direction: column;
+                        gap: 20px;
+                        border: unset;
+                    }
+                    & .locationSearch {
+                        margin-right: 5px;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        border-left: 1px solid $color-grey-60;
+                        padding-left: 10px;
+                        margin-left: 10px;
+                        @media screen and (max-width: 1200px) {
+                            width: 300px;
+                            border: 1px solid $color-grey-60;
+                            border-radius: 10px;
+                        }
+                        & svg {
+                            color: $color-secondary;
+                            @media screen and (max-width: 1200px) {
+                                padding-right: 10px;
+                            }
+                        }
+                        & select {
+                            border: unset;
+                            color: $color-grey-60;
+                            min-width: 100px;
+                            @media screen and (max-width: 1200px) {
+                                width: 290px;
+                                padding: 10px;
+                            }
+                            &:not([value="0"]) {
+                                color: $color-dark-70;
+                            }
+                            &:focus {
+                                outline: unset;
+                            }
+                        }
+                    }
+                    & input {
+                        padding: 10px 5px;
+                        width: 100%;
+                        border: unset;
+                        &:focus {
+                            outline: unset;
+                        }
+                        &:nth-child(2) {
+                            width: 600px;
+                            @media screen and (max-width: 1200px) {
+                                width: 300px;
+                                border: 1px solid $color-grey-60;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+                & button {
+                    background-color: $color-fourthly-100;
+                    border: unset;
+                    padding: 15px 20px;
+                    color: $color-dark-100;
+                    border-radius: 10px;
+                    @include flex(center, center);
+                    cursor: pointer;
+                    gap: 5px;
+                    @media screen and (max-width: 1200px) {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+    & .banner {
+        @include bg-gradient(45deg, #541aa6, #7045d4);
+        height: 100%;
+        padding: 10px 0;
+        position: relative;
+        width: 15%;
+        & svg {
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+    }
+}
+
+.brands-item {
+    @include flex(space-between, center, row, wrap);
+    & .item {
+        width: 220px;
+        height: 75px;
+    }
+}
+.khoger-slider {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../images/site-images/Untitled-21 1.jpg");
+    background-position: center, center;
+    background-size: cover;
+    @include flex(space-between, center, row, wrap);
+    padding: 30px 20px;
+    & .mySwiper2,
+    .mySwiper {
+        @media screen and (min-width: 1201px) {
+            width: 40%;
+        }
+    }
+    & .mySwiper {
+        overflow: visible;
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        & .swiper-slide {
+            position: relative;
+            width: unset;
+            @media screen and (min-width: 1201px) {
+                @include flex(start, center);
+                gap: 10px;
+            }
+            & svg {
+                color: #875fc1;
+                cursor: pointer;
+            }
+            &.swiper-slide-thumb-active {
+                & svg {
+                    color: #ff00b1;
+                }
+                & .swiper-slide-title {
+                    transform: translateY(0);
+                    opacity: 1;
+                    visibility: visible;
+                    display: block;
+                }
+            }
+            & .swiper-slide-title {
+                position: absolute;
+                top: 30px;
+                left: 10px;
+                right: 10px;
+                @media screen and (min-width: 1201px) {
+                    top: -5px;
+                    right: 30px;
+                }
+                width: 300px;
+                transform: translateY(20px);
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+                & h2 {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: $color-white;
+                    margin-bottom: 10px;
+                }
+                & p {
+                    font-size: 16px;
+                    color: $color-white;
+                }
+            }
+        }
+        & .mySwiperLogo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    }
+    & .mySwiper2 {
+        & .swiper-slide {
+            & .title-slide {
+                margin-bottom: 50px;
+                & h2 {
+                    font-size: 22px;
+                    font-weight: bold;
+                    color: $color-white;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                & p {
+                    font-size: 16px;
+                    text-align: center;
+                    color: $color-white;
+                }
+            }
+            & .image-slide {
+                text-align: center;
+                & img {
+                    width: 600px;
+                }
+            }
+            & .btn-slide {
+                text-align: center;
+                margin-top: 30px;
+                & a {
+                    background-color: $color-tertiary-100;
+                    @include flex(center, center);
+                    gap: 5px;
+                    max-width: max-content;
+                    margin: 0 auto;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+.ConfirmInformation {
+    max-width: 800px;
+    text-align: center;
+    & .ConfirmInformationBold {
+        font-weight: bold;
+        color: $color-primary-100;
+    }
+}
+.info-office-item {
+    @include flex(center, center);
+    @media screen and(max-width: 1200px) {
+        flex-direction: column;
+    }
+    &:nth-child(1) {
+        & .image {
+            border-radius: 20px 20px 20px 0;
+            @media screen and(max-width: 1200px) {
+                border-radius: 0;
+            }
+        }
+        & .icon {
+            @include bg-gradient(45deg, #7045d464, #7045d4d7);
+        }
+    }
+    &:nth-child(2) {
+        & .image {
+            border-radius: 20px 0px 0px 20px;
+            @media screen and(max-width: 1200px) {
+                border-radius: 0;
+                order: -1;
+            }
+        }
+        & .icon {
+            @include bg-gradient(45deg, #541aa62b, #541aa6ad);
+        }
+    }
+    &:nth-child(3) {
+        & .image {
+            border-radius: 0px 20px 20px 20px;
+            @media screen and(max-width: 1200px) {
+                border-radius: 0;
+            }
+        }
+        & .icon {
+            @include bg-gradient(45deg, #ad960021, #8977037b);
+        }
+    }
+    & .image {
+        position: relative;
+        overflow: hidden;
+        width: 50%;
+        @media screen and(max-width: 1200px) {
+            width: 100%;
+            border-radius: 0;
+            height: 300px;
+        }
+        height: 400px;
+        & > img {
+            object-fit: cover;
+        }
+        & .icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            @include flex(center, center, column);
+            gap: 10px;
+            & img {
+                width: 80px;
+            }
+            & p {
+                font-size: 14px;
+                color: $color-white;
+            }
+        }
+    }
+    & .content {
+        width: 50%;
+        @media screen and(max-width: 1200px) {
+            width: 100%;
+            margin: 10px 0 40px;
+        }
+        & p {
+            width: 70%;
+            margin: 0 auto;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+}
+.moca {
+    margin: 100px auto;
+    text-align: center;
+    & img {
+        width: 800px;
+    }
+}
+.plan-section {
+    padding: 50px 20px;
+    @include bg-gradient(45deg, #6f46d3, #5319a5);
+    position: relative;
+    @include flex(center, center);
+    & > img {
+        position: absolute;
+        width: 150px;
+        left: 20px;
+        top: -80px;
+        @media screen and(max-width: 1200px) {
+            width: 100px;
+            left: 0px;
+            top: -50px;
+        }
+    }
+    & .content {
+        @include flex(center, center, column);
+        gap: 30px;
+        & .logo {
+            width: 300px;
+            margin: 0 auto;
+        }
+        & p {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 700px;
+            color: $color-white;
+            font-size: 16px;
+            & span.plan {
+                color: $color-fourthly-100;
+            }
+        }
+        & .plan-button {
+            text-align: center;
+            & a {
+                background-color: $color-grey-60;
+                padding: 10px 20px;
+                border-radius: 15px;
+            }
+        }
+    }
+}

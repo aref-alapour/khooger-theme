@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/template/signup-enduser.css">
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="signup">
+        <div class="logo">
+            <img src="./assets/images/logo/Khooger Logo Design Final(1) 1.png" alt="">
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <div class="modal-loginRegister" id="loginRegister">
+        <div class="main-signup" id="main-signup-container">
+            <div class="logo">
+                <img src="./assets/images/site-images/Untitled-1 1.png" alt="">
+            </div>
+            <div class="form">
+                <div class="level" id="level-1" style="display: flex;">
+                    <div class="header">
+                        <h2>ثبت‌ نام در خوگر</h2>
+                        <p>حساب کاربری مورد نظر خود را انتخاب کنید</p>
+                    </div>
+                    <div class="body">
+                        <form action="" class="account-type" id="account-type">
+                            <div class="item-type">
+                                <div class="radio-buttons">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="radio">
+                                        <div class="item">
+                                            <i class="fa fa-user-circle"></i>
+                                            <span>حساب بازدید کننده</span>
+                                        </div>
+                                    </label>
+                                    <button type="submit" style="cursor: pointer;">
+                                        <i class="fa fa-arrow-circle-left"></i>
+                                    </button>
+                                </div>
+                                <div class="sub first-child">
+                                    <sub>
+                                        من یک بازدید کننده هستم و به دنبال مجری و یا محصولات برای
+                                        پروژه‌های معماری خود میگردم.
+                                    </sub>
+                                </div>
+                            </div>
+                            <div class="item-type">
+                                <div class="radio-buttons">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="radio">
+                                        <div class="item">
+                                            <i class="fa fa-briefcase"></i>
+                                            <span>حساب مجری‌ها و فروشندگان</span>
+                                        </div>
+                                    </label>
+                                    <button type="submit" style="cursor: pointer;">
+                                        <i class="fa fa-arrow-circle-left"></i>
+                                    </button>
+                                </div>
+                                <div class="sub">
+                                    <sub>
+                                        من صاحب تخصص/فروشنده‌کالا هستم و به دنبال افزایش مشتری و
+                                        توسعه
+                                        کسب و کار خود هستم.
+                                    </sub>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="footer">
+                        <span>قبلا ثبت نام کردید؟</span>
+                        <a href="#">ورود
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="level" id="level-2" style="display: none;">
+                    <span class="pre-level">
+                        <i class="fa fa-arrow-right"></i>
+                        بازگشت
+                    </span>
+                    <div class="header">
+                        <h2>ثبت نام در خوگر</h2>
+                        <p>شماره همراه خود را وارد کنید</p>
+                    </div>
+                    <div class="body">
+                        <form action="" class="signup-form" id="signup-phone">
+                            <input type="tel" name="phone" id="phone" class="phone"
+                                   placeholder="شماره همراه"
+                                   onkeyup="showResultPhone(this.value)"
+                                   pattern="[0-9]{11}">
+                            <span class="phone-valid">* لطفا شماره موبایل معتبر وارد کنید</span>
+                            <input type=" submit" value="ثبت نام" id="submit-phone"
+                                   class="submit-phone disabled">
+                        </form>
+                        <p>ثبت نام شما به منزله پذیرش <a href="#">مقررات و قوانین</a> خوگر خواهد
+                            بود
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <span>برای شما که صاحب کسب و کار هستید.</span>
+                        <br>
+                        <a href="#">حساب خوگر پرو
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="level" id="level-3" style="display: none;">
+                    <span class="pre-level">
+                        <i class="fa fa-arrow-right"></i>
+                        بازگشت
+                    </span>
+                    <div class="header">
+                        <h2>تایید شماره همراه</h2>
+                    </div>
+                    <div class="body">
+                        <p class="code-check">رمز یکبار مصرف به شماره
+                            <span>09121111111</span>ارسال
+                            شد
+                        </p>
+                        <form action="" class="signup-form code-check" id="signup-phone-code">
+                            <fieldset name='number-code' data-number-code-form>
+                                <input type="number" min='0' max='9' name='number-code-0'
+                                       data-number-code-input='0' required />
+                                <input type="number" min='0' max='9' name='number-code-1'
+                                       data-number-code-input='1' required />
+                                <input type="number" min='0' max='9' name='number-code-2'
+                                       data-number-code-input='2' required />
+                                <input type="number" min='0' max='9' name='number-code-3'
+                                       data-number-code-input='3' required />
+                                <input type="number" min='0' max='9' name='number-code-4'
+                                       data-number-code-input='4' required />
+                            </fieldset>
+                            <p class="code-timer" id="code-timer"><span id="code-time"
+                                      data-time="120">120</span>
+                                ثانیه
+                                تا ارسال رمز مجدد</p>
+                            <p id="sendCode" style="display: none;">ارسال مجدد رمز
+                                <i class="fa fa-sync-alt"></i>
+                            </p>
+                            <input type="submit" value="تایید رمز" id="submit-code"
+                                   class="submit-phone">
+                        </form>
+                    </div>
+                    <div class="footer">
+
+                    </div>
+                </div>
+                <div class="level" id="level-4" style="display: none;">
+                    <span class="pre-level">
+                        <i class="fa fa-arrow-right"></i>
+                        بازگشت
+                    </span>
+                    <div class="header">
+                        <h2>باب آشنایی بیشتر...</h2>
+                        <p>نام و نام خانوادگی خود را وارد کنید</p>
+                    </div>
+                    <div class="body">
+                        <form action="" class="signup-form">
+                            <input class="name-user" type="text" placeholder="نام و نام خانوادگی">
+                            <input type="submit" value="تکمیل ثبت نام" class="submit-phone">
+                        </form>
+                        <p>
+                            پس از تکمیل شما بصورت خودکار به وبسایت منتقل خواهید شد
+                        </p>
+                    </div>
+                    <div class="footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer>
+        <div class="container">
+            <div class="sub-footer">
+                <div class="title">
+                    <p>
+                        تمامی حقوق این وبسایت متعلق به خوگر می‌باشد
+                    </p>
+                </div>
+                <div class="socials">
+                    <div class="item">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="item">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="item">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+</body>
+<script src="./assets/js/all.min.js"></script>
+<script src="./assets/js/template/signup-enduser.js"></script>
+
+</html>

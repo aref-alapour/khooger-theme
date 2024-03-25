@@ -1,0 +1,81 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-dark-100;
+    font-weight: bold;
+}
+p {
+    color: $color-dark-70;
+}
+p a {
+    color: $color-primary-100;
+    transition: all 0.2s ease;
+    font-weight: bolder;
+    &:hover {
+        color: $color-primary-70;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    // Font minimum, preferred and maximum value
+    font-size: clamp(var(--min), var(--val), var(--max));
+}
+
+// Font size variables
+h1 {
+    --min: 2rem; // minimum value
+    --val: calc(11.3px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+    --max: 3rem; // maximum value
+}
+h2 {
+    --min: 1.6rem; // minimum value
+    --val: calc(8.3px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+    --max: 2.4rem; // maximum value
+}
+h3 {
+    --min: 1.5rem; // minimum value
+    --val: calc(5.3px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+    --max: 2rem; // maximum value
+}
+h4 {
+    --min: 1.4rem; // minimum value
+    --val: calc(2.3px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+    --max: 1.8rem; // maximum value
+}
+h5 {
+    --min: 1.35rem; // minimum value
+    --val: calc(4.6px + (60 - 42) * (100vw - 968px) / (1440 - 768));
+    --max: 1.6rem; // maximum value
+}
+h6 {
+    --min: 1.3rem; // minimum value
+    --val: calc(1.6px + (60 - 42) * (100vw - 968px) / (1440 - 768));
+    --max: 1.4rem; // maximum value
+}
+p,
+span {
+    --min: 1.4rem; // minimum value
+    --val: calc(0.3px + (60 - 42) * (100vw - 768px) / (1440 - 768));
+    --max: 1.6rem; // maximum value
+}
+
+.smaller {
+    font-weight: lighter;
+}
+
+.bloder {
+    font-weight: bolder;
+}
+p::selection {
+    color: $color-grey-20;
+    background-color: $color-primary-100;
+}

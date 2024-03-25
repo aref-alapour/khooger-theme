@@ -1,0 +1,13 @@
+header > div.flex > div.item svg {
+    font-size: 60px;
+}
+div.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: red;
+}
+footer > div.flex > div.item svg {
+    font-size: 90px;
+}

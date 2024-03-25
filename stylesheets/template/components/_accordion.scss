@@ -1,0 +1,87 @@
+.faq-section {
+    & .faq-title {
+        & p {
+            width: 300px;
+            text-align: center;
+            font-size: 16px;
+            margin: 0 auto;
+            color: $color-primary-100;
+            font-weight: 500;
+        }
+    }
+}
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+.accordion .label::before {
+    content: "+";
+    color: #bc17ae;
+    background-color: #bc17ae30;
+    width: 20px;
+    height: 20px;
+    @include flex(center, center);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+.accordion .content {
+    position: relative;
+    background: white;
+    height: 0;
+    font-size: 13px;
+    text-align: justify;
+    max-width: 780px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/* Adds a horizontal line between the contents */
+
+.accordion hr {
+    width: 100;
+    margin-left: 0;
+    border: 1px solid grey;
+}
+.accordion .container {
+    position: relative;
+    margin: 10px 10px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.accordion .label {
+    position: relative;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-dark-70;
+    cursor: pointer;
+}
+
+.accordion {
+    max-width: 800px;
+    margin: 30px auto;
+    color: $color-dark-70;
+    background-color: white;
+    padding: 45px 45px;
+    & hr {
+        border-color: $color-grey-40;
+    }
+}
+/* Unhides the content part when active. Sets the height */
+
+.accordion .container.active .content {
+    height: 150px;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+.accordion .container.active .label::before {
+    content: "-";
+    font-size: 30px;
+}

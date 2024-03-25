@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/template/signup-page1.css">
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="signup">
+        <div class="logo">
+            <img src="./assets/images/logo/Khooger Logo Design Final(1) 1.png" alt="">
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <div class="container">
+        <div class="main-signup-complete">
+            <div class="content">
+                <div class="main">
+                    <h1>چند قدم تا تکمیل حساب کاربری شما</h1>
+                    <div class="formbold-main-wrapper">
+                        <div class="formbold-form-wrapper">
+                            <form action="" method="POST">
+                                <div class="formbold-steps">
+                                    <ul>
+                                        <li class="formbold-step-menu1 active">
+                                            <span><i class="fa fa-calendar-check"></i></span>
+                                            <p>انتخاب نوع پنل</p>
+                                        </li>
+                                        <li class="formbold-step-menu2">
+                                            <span><i class="fa fa-calendar-check"></i></span>
+                                            <p>مشخصات کسب و کار</p>
+                                        </li>
+                                        <li class="formbold-step-menu3">
+                                            <span><i class="fa fa-file-upload"></i></span>
+                                            <p>آپلود تصویر</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="formbold-form-step-1 active">
+                                    <p class="form-step-title">
+                                        نوع فعالیت خود را مشخص کنید
+                                    </p>
+                                    <div class="radio-buttons">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="radio" checked>
+                                            <div class="item">
+                                                <i class="fa fa-store-alt"></i>
+                                                <span>فروشنده</span>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="radio">
+                                            <div class="item">
+                                                <i class="fa fa-user-tie"></i>
+                                                <span>استادکار</span>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="radio">
+                                            <div class="item">
+                                                <i class="fa fa-briefcase"></i>
+                                                <span>مجری</span>
+                                            </div>
+                                        </label>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="formbold-form-step-2">
+                                    <p class="form-step-title">
+                                        نام کسب و کار خود را وارد کنید
+                                    </p>
+                                    <input type="text" name="bussines-name" class="bussines-name"
+                                           placeholder="نام کسب و کار">
+                                    <span class="bussines-subtitle">
+                                        نام وارد شده بعداً قابل تغییر میباشد
+                                    </span>
+                                </div>
+
+                                <div class="formbold-form-step-3">
+                                    <p class="form-step-title">
+                                        برای حساب کاربری خود تصویر بارگزاری کنید
+                                    </p>
+                                    <div id="uploadArea" class="upload-area">
+                                        <!-- Header -->
+                                        <div class="upload-area__header">
+                                            <p class="upload-area__paragraph">
+                                                <strong class="upload-area__tooltip">
+                                                    فرمت‌های مجاز
+                                                    <span class="upload-area__tooltip-data"></span>
+                                                    <!-- Data Will be Comes From Js -->
+                                                </strong>
+                                            </p>
+                                        </div>
+                                        <!-- End Header -->
+
+                                        <!-- Drop Zoon -->
+                                        <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                                            <span class="drop-zoon__icon">
+                                                <i class='bx bxs-file-image'></i>
+                                            </span>
+                                            <p class="drop-zoon__paragraph">فایل خود را اینجا رها
+                                                کنید یا
+                                                کلیک کنید</p>
+                                            <span id="loadingText"
+                                                  class="drop-zoon__loading-text">لطفا منتظر
+                                                بمانید</span>
+                                            <img src="" alt="Preview Image" id="previewImage"
+                                                 class="drop-zoon__preview-image"
+                                                 draggable="false">
+                                            <input type="file" id="fileInput"
+                                                   class="drop-zoon__file-input" accept="image/*">
+                                        </div>
+                                        <!-- End Drop Zoon -->
+
+                                        <!-- File Details -->
+                                        <div id="fileDetails"
+                                             class="upload-area__file-details file-details">
+                                            <div id="uploadedFile" class="uploaded-file">
+                                                <div class="uploaded-file__icon-container">
+                                                    <i
+                                                       class='bx bxs-file-blank uploaded-file__icon'></i>
+                                                    <span class="uploaded-file__icon-text"></span>
+                                                    <!-- Data Will be Comes From Js -->
+                                                </div>
+
+                                                <div id="uploadedFileInfo"
+                                                     class="uploaded-file__info">
+                                                    <span class="uploaded-file__name"></span>
+                                                    <span class="uploaded-file__counter">0%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End File Details -->
+                                    </div>
+                                </div>
+
+                                <div class="formbold-form-btn-wrapper">
+                                    <button class="formbold-back-btn">
+                                        مرحله قبلی
+                                    </button>
+
+                                    <button class="formbold-btn">
+                                        مرحله بعدی
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="background">
+                    <img src="./assets/images/site-images/Untitled-21 1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer>
+        <div class="container">
+            <div class="sub-footer">
+                <div class="title">
+                    <p>
+                        تمامی حقوق این وبسایت متعلق به خوگر می‌باشد
+                    </p>
+                </div>
+                <div class="socials">
+                    <div class="item">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="item">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="item">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+</body>
+<script src="./assets/js/all.min.js"></script>
+<script src="./assets/js/template/signup-page2.js"></script>
+
+</html>

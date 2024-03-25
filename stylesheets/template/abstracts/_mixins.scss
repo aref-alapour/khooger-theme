@@ -1,0 +1,28 @@
+@mixin flex($justify-content: false, $align-items: false, $column: false, $wrap: false, $grow: false) {
+    display: flex;
+    @if ($justify-content) {
+        justify-content: $justify-content;
+    }
+    @if ($align-items) {
+        align-items: $align-items;
+    }
+    @if ($column) {
+        flex-direction: $column;
+    }
+    @if ($wrap) {
+        flex-wrap: $wrap;
+    }
+
+    @if ($grow) {
+        flex-grow: $grow;
+    }
+}
+
+@mixin box($width, $height: $width) {
+    width: $width + rem;
+    height: $height + rem;
+}
+
+@mixin bg-gradient($gradient-deg: 0deg, $color-1: false, $color-2: false) {
+    background: linear-gradient($gradient-deg, $color-1, $color-2);
+}

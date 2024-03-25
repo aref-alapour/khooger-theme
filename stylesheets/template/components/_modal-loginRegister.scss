@@ -1,0 +1,323 @@
+#background-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000076;
+    z-index: 200;
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: $cubic-transition;
+    &.active {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.modal-loginRegister {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: 9999;
+}
+.main-signup {
+    height: calc(100vh - 240px);
+    width: fit-content;
+    margin: 0 auto;
+    @include flex(center, center);
+    @extend %box-shadow-e3;
+    border-radius: 20px;
+    overflow: hidden;
+    background: $color-white;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: $cubic-transition;
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    & .form {
+        position: relative;
+        padding: 30px 80px;
+        @media screen and (max-width: 578px) {
+            padding: 30px;
+        }
+        height: 100%;
+        & #close-loginRegister {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            & svg {
+                background-color: $color-grey-60;
+                color: $color-dark-70;
+                padding: 5px;
+                border-radius: 50%;
+                cursor: pointer;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+        & .level {
+            position: relative;
+            height: 100%;
+            text-align: center;
+            @include flex(space-between, center, column);
+            gap: 20px;
+            & .pre-level {
+                position: absolute;
+                right: -60px;
+                top: -10px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: small;
+                cursor: pointer;
+                @media (max-width: 768px) {
+                    right: -20px;
+                }
+            }
+            & .header {
+                margin-top: 30px;
+                & h2 {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                & > p {
+                    font-size: 12px;
+                }
+            }
+            & .body {
+                & .radio-buttons {
+                    @include flex(space-between, center);
+                    gap: 20px;
+                    background-color: $color-white;
+                    border: 1px solid $color-primary-100;
+                    border-radius: 5px;
+                    padding: 0 10px;
+                    margin-bottom: 10px;
+                    color: $color-dark-70;
+                    width: 200px;
+                    & > .custom-radio {
+                        padding: 10px 0;
+                        @include flex(center, center);
+                        gap: 5px;
+                        cursor: pointer;
+                        & input {
+                            display: none;
+                        }
+                        & .item {
+                            & span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    & button {
+                        background-color: unset;
+                        border: unset;
+                        color: $color-dark-70;
+                    }
+                    &:has(> .custom-radio > input:checked) {
+                        background-color: $color-primary-100;
+                        color: $color-white;
+                        & button {
+                            color: $color-white;
+                        }
+                    }
+                }
+                & > p.code-check {
+                    font-size: 10px;
+                    width: 250px;
+                    & span {
+                        font-size: 12px;
+                    }
+                    margin-bottom: 10px;
+                }
+                & form.signup-form {
+                    @include flex(center, center, column);
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    & input.phone {
+                        padding: 10px;
+                        border-radius: 15px;
+                        width: 200px;
+                        border: 1px solid $color-grey-100;
+                        &:focus {
+                            outline: unset;
+                        }
+                        &::placeholder {
+                            text-align: right;
+                        }
+                        &:not(:placeholder-shown) {
+                            border-color: green;
+                        }
+                        &:invalid {
+                            border-color: red;
+                            & + span {
+                                display: block;
+                            }
+                        }
+                    }
+                    & .phone-valid {
+                        font-size: 10px;
+                        color: red;
+                        text-align: right;
+                        margin-top: -10px;
+                        display: none;
+                    }
+                    & input.submit-phone {
+                        background-color: $color-primary-100;
+                        border: unset;
+                        width: 200px;
+                        padding: 10px;
+                        border-radius: 15px;
+                        color: $color-white;
+                        cursor: pointer;
+                        transition: $hover-transition;
+                        text-align: center;
+
+                        &.disabled {
+                            cursor: not-allowed;
+                            background-color: $color-grey-100;
+                        }
+                    }
+                    &.code-check {
+                        & fieldset {
+                            border: none;
+                        }
+                        direction: ltr;
+                        & input:not(input.submit-phone) {
+                            width: 45px;
+                            height: 45px;
+                            font-size: 14px;
+                            text-align: center;
+                            border: 1px solid $color-grey-100;
+                            border-radius: 10px;
+                            &:focus {
+                                border-color: $color-primary-100;
+                                outline: unset;
+                            }
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                            &[type="number"] {
+                                -moz-appearance: textfield;
+                            }
+                        }
+                        & p.code-timer {
+                            margin-top: 20px;
+                            font-size: 12px;
+                            direction: rtl;
+                            & span {
+                                font-size: 14px;
+                            }
+                        }
+                        & p#sendCode {
+                            margin-top: 20px;
+                            font-size: 12px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                & form {
+                    & .password {
+                        padding: 10px;
+                        border-radius: 15px;
+                        width: 200px;
+                        border: 1px solid $color-grey-100;
+                        &:focus {
+                            outline: unset;
+                        }
+                    }
+                }
+                & .reset-password {
+                    @include flex(center, center, column);
+                    gap: 10px;
+                    width: 100%;
+                    & p {
+                        font-size: 12px;
+                    }
+                    & button#reset-password {
+                        font-size: 12px;
+                        background-color: unset;
+                        border: unset;
+                        color: $color-primary-100;
+                        cursor: pointer;
+                    }
+                }
+
+                & > p {
+                    width: 200px;
+                    font-size: small;
+                }
+                & .success-reset {
+                    & svg {
+                        font-size: 25px;
+                        color: $color-primary-100;
+                    }
+                    & p {
+                        font-size: 12px;
+                        text-wrap: nowrap;
+                        margin: 30px 0;
+                    }
+                    & a {
+                        background-color: $color-primary-100;
+                        color: $color-white;
+                        padding: 10px 20px;
+                        border-radius: 15px;
+                    }
+                }
+            }
+            & .footer {
+                text-align: right;
+                & span {
+                    font-size: 12px;
+                }
+                & a {
+                    font-size: 12px;
+                    margin-right: 10px;
+                    color: $color-primary-100;
+                }
+                & button.btn {
+                    background-color: unset;
+                    border: unset;
+                    @include flex(center, center);
+                    gap: 5px;
+                    color: $color-primary-100;
+                    cursor: pointer;
+                }
+            }
+        }
+        & #level-5 {
+            & p {
+                font-size: 10px;
+            }
+        }
+    }
+
+    & .logo {
+        background-image: url("../../images/site-images/Image artboard 15 1.jpg");
+        max-width: 500px;
+        width: 50%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+        @media screen and (max-width: 992px) {
+            display: none;
+        }
+        @include flex(center, center);
+
+        & img {
+            width: 50%;
+        }
+    }
+}

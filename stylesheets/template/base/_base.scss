@@ -1,0 +1,54 @@
+html {
+    direction: rtl;
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: $font-stack;
+    font-size: 1.5rem;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+dl,
+ol,
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    line-height: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+        color: inherit;
+    }
+}
+svg {
+    line-height: 0;
+}
+button {
+    line-height: 0;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
